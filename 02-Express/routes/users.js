@@ -13,8 +13,14 @@ router.get('/new', (req, res) => {
    res.render('/users/new', {firstName: 'Test'})
 })
 
+router.post('/', (req, res) => {
+   console.log(req.body.firstName)
+   res.send('Hi')
+})
+
 
 // Advanced Routing
+
 
 router.post('/', (req, res) => {
    res.send('Create user')
