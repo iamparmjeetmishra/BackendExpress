@@ -14,7 +14,7 @@ router.get('/new', (req, res) => {
 })
 
 router.post('/', (req, res) => {
-   console.log(req.body.firstName)
+   console.log(req.body.firstName) // Cannot access from here we need middleware for this
    res.send('Hi')
 })
 
