@@ -14,8 +14,16 @@ router.get('/new', (req, res) => {
 })
 
 router.post('/', (req, res) => {
-   console.log(req.body.firstName) // Cannot access from here we need middleware for this
-   res.send('Hi')
+   const isValid = true
+   if (isValid) {
+      users.push({ firstName: req.body.firstName })
+      res.redirect(`/users/${users.length - 1}`)
+   } else {
+      console.log('Error at Post ')
+      res.render('/users/new', { firstName: req.body.firstName})
+   }
+   // console.log(req.body.firstName) // Cannot access from here we need middleware for this
+   // res.send('Hi')
 })
 
 
